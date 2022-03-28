@@ -1,13 +1,21 @@
+import { useState } from "react";
+// import { axios } from "axios";
+
 export const LoginSignUp = () => {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("");
   return (
     <div className="loginSignUp">
-      <form className="signUp" onSubmit={(e) => { }}>
+      <form className="signUp" onSubmit={(e) => {}}>
         <h1>SignUp</h1>
         <label>name</label>
         <input
           type="text"
           className="name"
-          onChange={(event) => { }}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
           required
         />
         <br />
@@ -15,11 +23,19 @@ export const LoginSignUp = () => {
         <input
           type="text"
           className="password"
-          onChange={(event) => { }}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
           required
         />
         <br />
-        <select value={""} className="location" onChange={(event) => { }}>
+        <select
+          value={""}
+          className="location"
+          onChange={(event) => {
+            setLocation(event.target.value);
+          }}
+        >
           <option value=""></option>
           <option value="bangalore">Bangalore</option>
           <option value="kolkata">Kolkata</option>
@@ -32,49 +48,44 @@ export const LoginSignUp = () => {
         <input
           type="checkbox"
           className="technology"
-          onChange={(event) => { }}
+          onChange={(event) => {}}
         />
         <br />
         <label>food</label>
-        <input type="checkbox" className="food" onChange={(event) => { }} />
+        <input type="checkbox" className="food" onChange={(event) => {}} />
         <br />
         <label>movies</label>
-        <input type="checkbox" className="movies" onChange={(event) => { }} />
+        <input type="checkbox" className="movies" onChange={(event) => {}} />
         <br />
         <label>culture</label>
-        <input type="checkbox" className="culture" onChange={(event) => { }} />
+        <input type="checkbox" className="culture" onChange={(event) => {}} />
         <br />
         <label>art</label>
-        <input type="checkbox" className="art" onChange={(event) => { }} />
+        <input type="checkbox" className="art" onChange={(event) => {}} />
         <br />
         <label>drama</label>
-        <input type="checkbox" className="drama" onChange={(event) => { }} />
+        <input type="checkbox" className="drama" onChange={(event) => {}} />
         <br />
         <label>image</label>
         <input
           type="text"
           className="image"
-          onChange={(event) => { }}
+          onChange={(event) => {}}
           required
         />
         <br />
         <input type="submit" className="submitSignUpForm" />
       </form>
-      <form className="login" onSubmit={(e) => { }}>
+      <form className="login" onSubmit={(e) => {}}>
         <h1>Login</h1>
         <label>name</label>
-        <input
-          type="text"
-          className="name"
-          onChange={(event) => { }}
-          required
-        />
+        <input type="text" className="name" onChange={(event) => {}} required />
         <br />
         <label>password</label>
         <input
           type="text"
           className="password"
-          onChange={(event) => { }}
+          onChange={(event) => {}}
           required
         />
         <br />
